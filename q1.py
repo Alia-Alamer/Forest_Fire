@@ -88,45 +88,68 @@ plt.show()
 sns.pairplot(forestfire[["FFMC", "DMC", "DC", "ISI", "BUI", "FWI"]], y_vars='FWI')
 plt.show()
 
-plt.figure(figsize=(10, 6))
-plt.scatter(forestfire["Temperature"], forestfire["FWI"], alpha=0.7, color='red', s=50)
-plt.xlabel('Temperature', fontsize=12)
-plt.ylabel('FWI', fontsize=12)
-plt.title('Zusammenhang zwischen Temperature UND FWI', fontsize=14)
-plt.grid(True, alpha=0.3)
 
-plt.tight_layout()
-plt.show()
+print("\nCorrelation with FWI (Fire Indices Only):")
+for col in ["FFMC", "DMC", "DC", "ISI", "BUI"]:
+    corr = forestfire[col].corr(forestfire["FWI"])
+    print(f"{col}: {corr:.3f}")
 
 
-plt.figure(figsize=(10, 6))
-plt.scatter(forestfire["RH"], forestfire["FWI"], alpha=0.7, color='red', s=50)
-plt.xlabel('RH', fontsize=12)
-plt.ylabel('FWI', fontsize=12)
-plt.title('Zusammenhang zwischen RH UND FWI', fontsize=14)
-plt.grid(True, alpha=0.3)
-
-plt.tight_layout()
-plt.show()
 
 
-plt.figure(figsize=(10, 6))
-plt.scatter(forestfire["Ws"], forestfire["FWI"], alpha=0.7, color='red', s=50)
-plt.xlabel('Ws', fontsize=12)
-plt.ylabel('FWI', fontsize=12)
-plt.title('Zusammenhang zwischen Ws UND FWI', fontsize=14)
-plt.grid(True, alpha=0.3)
-
-plt.tight_layout()
-plt.show()
 
 
-plt.figure(figsize=(10, 6))
-plt.scatter(forestfire["Rain"], forestfire["FWI"], alpha=0.7, color='red', s=50)
-plt.xlabel('Rain', fontsize=12)
-plt.ylabel('FWI', fontsize=12)
-plt.title('Zusammenhang zwischen Rain UND FWI', fontsize=14)
-plt.grid(True, alpha=0.3)
 
-plt.tight_layout()
-plt.show()
+
+
+
+
+
+
+
+
+
+
+
+#plt.figure(figsize=(10, 6))
+#plt.scatter(forestfire["Temperature"], forestfire["FWI"], alpha=0.7, color='red', s=50)
+#plt.xlabel('Temperature', fontsize=12)
+#plt.ylabel('FWI', fontsize=12)
+#plt.title('Zusammenhang zwischen Temperature UND FWI', fontsize=14)
+#plt.grid(True, alpha=0.3)
+
+#plt.tight_layout()
+#plt.show()
+
+
+#plt.figure(figsize=(10, 6))
+#plt.scatter(forestfire["RH"], forestfire["FWI"], alpha=0.7, color='red', s=50)
+#plt.xlabel('RH', fontsize=12)
+#plt.ylabel('FWI', fontsize=12)
+#plt.title('Zusammenhang zwischen RH UND FWI', fontsize=14)
+#plt.grid(True, alpha=0.3)
+
+#plt.tight_layout()
+#plt.show()
+
+
+#plt.figure(figsize=(10, 6))
+#plt.scatter(forestfire["Ws"], forestfire["FWI"], alpha=0.7, color='red', s=50)
+#plt.xlabel('Ws', fontsize=12)
+#plt.ylabel('FWI', fontsize=12)
+#plt.title('Zusammenhang zwischen Ws UND FWI', fontsize=14)
+#plt.grid(True, alpha=0.3)
+#
+#plt.tight_layout()
+#plt.show()
+
+
+#plt.figure(figsize=(10, 6))
+#plt.scatter(forestfire["Rain"], forestfire["FWI"], alpha=0.7, color='red', s=50)
+#plt.xlabel('Rain', fontsize=12)
+#plt.ylabel('FWI', fontsize=12)
+#plt.title('Zusammenhang zwischen Rain UND FWI', fontsize=14)
+#plt.grid(True, alpha=0.3)
+
+#plt.tight_layout()
+#plt.show()
